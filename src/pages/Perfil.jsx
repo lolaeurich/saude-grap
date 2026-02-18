@@ -1,4 +1,6 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useJornada } from '@/lib/JornadaContext';
 import PageHeader from '@/components/layout/PageHeader';
 import BottomNav from '@/components/layout/BottomNav';
 import TopNav from '@/components/layout/TopNav';
@@ -21,6 +23,14 @@ const mockPerfil = {
 };
 
 export default function Perfil() {
+  const navigate = useNavigate();
+  const { resetarJornada } = useJornada();
+
+  const handleLogout = () => {
+    resetarJornada();
+    navigate('/', { replace: true });
+  };
+
   return (
     <div className="pb-32">
       <TopNav />
@@ -96,7 +106,11 @@ export default function Perfil() {
           <Button variant="outline" className="rounded-lg font-semibold py-2.5 border-gray-300 hover:bg-gray-50">
             Configurações
           </Button>
-          <Button variant="outline" className="col-span-1 md:col-span-2 text-red-600 border-red-200 hover:bg-red-50 rounded-lg font-semibold py-2.5">
+          <Button 
+            variant="outline" 
+            className="col-span-1 md:col-span-2 text-red-600 border-red-200 hover:bg-red-50 rounded-lg font-semibold py-2.5"
+            onClick={handleLogout}
+          >
             Sair da Plataforma
           </Button>
         </div>

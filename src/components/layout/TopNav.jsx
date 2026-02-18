@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useJornada } from '@/lib/JornadaContext';
 import { Home, ClipboardList, Wallet, User, Heart, Bell, X, CheckCircle, AlertCircle, Info, LogOut } from "lucide-react";
 
@@ -25,6 +25,7 @@ const mockNotificacoes = [
 ];
 
 export default function TopNav({ currentPage }) {
+  const navigate = useNavigate();
   const [showNotificacoes, setShowNotificacoes] = useState(false);
   const { jornada, resetarJornada } = useJornada();
 
@@ -42,12 +43,14 @@ export default function TopNav({ currentPage }) {
   };
 
   const handleSair = () => {
+    // fecha dropdowns, reseta jornada e navega para a página inicial substituindo o histórico
+    setShowNotificacoes(false);
     resetarJornada();
-    window.location.href = '/';
+    navigate('/', { replace: true });
   };
 
   return (
-    <nav className="hidden md:block sticky top-0 z-50 bg-white/95 backdrop-blur-lg border-b border-gray-200 shadow-sm">
+    <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-lg border-b border-gray-200 shadow-sm">
       <div className="max-w-7xl mx-auto px-6 py-3">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
@@ -62,7 +65,7 @@ export default function TopNav({ currentPage }) {
             </span>
           </div>
 
-          <div className="flex items-center gap-2">
+          <div className="hidden md:flex items-center gap-2">
             {navItems.map((item) => {
               const isActive = currentPage === item.page;
               const Icon = item.icon;
