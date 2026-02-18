@@ -30,7 +30,7 @@ export default function LandingPage() {
             </div>
           </div>
           <h1 className="text-4xl font-bold bg-gradient-to-r from-violet-600 to-purple-600 bg-clip-text text-transparent mb-3">
-            Health Connect
+            CareNow
           </h1>
           <p className="text-lg text-gray-600">Escolha seu tipo de acesso para começar</p>
         </div>
