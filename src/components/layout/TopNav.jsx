@@ -58,7 +58,7 @@ export default function TopNav({ currentPage }) {
               <Heart className="w-5 h-5 text-white fill-white" />
             </div>
             <h1 className="text-xl font-bold bg-gradient-to-r from-violet-600 to-purple-600 bg-clip-text text-transparent">
-              Health Connect
+              CareNow
             </h1>
             <span className="text-xs font-semibold px-2 py-1 bg-gray-100 text-gray-700 rounded-full ml-2">
               {jornada === 'profissional' ? 'Profissional' : 'Convênio'}

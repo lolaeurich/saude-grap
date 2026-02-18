@@ -14,7 +14,7 @@ const mockUser = {
   email: "gestor@convenio.com.br",
   phone: "(11) 3000-0000",
   location: "São Paulo, SP",
-  company: "Health Connect Convênios",
+  company: "CareNow Convênios",
   joinDate: "Janeiro de 2023",
 };
 
@@ -106,7 +106,7 @@ export default function PerfilConvenio() {
             Sobre
           </h3>
           <p className="text-xs text-gray-600 leading-relaxed">
-            Convênio parceiro da plataforma Health Connect. Conectamos pacientes que necessitam de atendimento domiciliar com profissionais de saúde qualificados e verificados.
+            Convênio parceiro da plataforma CareNow. Conectamos pacientes que necessitam de atendimento domiciliar com profissionais de saúde qualificados e verificados.
           </p>
         </Card>
 
