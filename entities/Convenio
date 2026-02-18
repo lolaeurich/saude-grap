@@ -1,0 +1,24 @@
+{
+  "name": "Convenio",
+  "type": "object",
+  "properties": {
+    "nome": {
+      "type": "string"
+    },
+    "logo_url": {
+      "type": "string"
+    },
+    "prazo_aceite_horas": {
+      "type": "number",
+      "default": 24,
+      "description": "Prazo m\u00e1ximo para aceite em horas"
+    },
+    "ativo": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "required": [
+    "nome"
+  ]
+}

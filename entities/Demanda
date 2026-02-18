@@ -1,0 +1,105 @@
+{
+  "name": "Demanda",
+  "type": "object",
+  "properties": {
+    "convenio_nome": {
+      "type": "string",
+      "description": "Nome do conv\u00eanio"
+    },
+    "especialidade": {
+      "type": "string",
+      "enum": [
+        "Fisioterapia Respirat\u00f3ria",
+        "Enfermagem Domiciliar",
+        "Cuidado Geri\u00e1trico",
+        "Nutri\u00e7\u00e3o Cl\u00ednica",
+        "Terapia Ocupacional",
+        "Fisioterapia Geri\u00e1trica",
+        "Curativo Especializado",
+        "Acompanhamento Domiciliar"
+      ],
+      "description": "Especialidade requerida"
+    },
+    "urgencia": {
+      "type": "string",
+      "enum": [
+        "baixa",
+        "media",
+        "urgente"
+      ],
+      "default": "media"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "disponivel",
+        "atribuida",
+        "em_execucao",
+        "finalizada",
+        "cancelada"
+      ],
+      "default": "disponivel"
+    },
+    "valor": {
+      "type": "number",
+      "description": "Valor do atendimento em R$"
+    },
+    "endereco": {
+      "type": "string"
+    },
+    "cidade": {
+      "type": "string"
+    },
+    "zona": {
+      "type": "string"
+    },
+    "data_atendimento": {
+      "type": "string",
+      "format": "date"
+    },
+    "horario_inicio": {
+      "type": "string",
+      "description": "Hor\u00e1rio de in\u00edcio (HH:mm)"
+    },
+    "horario_fim": {
+      "type": "string",
+      "description": "Hor\u00e1rio de fim (HH:mm)"
+    },
+    "duracao_minutos": {
+      "type": "number"
+    },
+    "observacoes": {
+      "type": "string"
+    },
+    "requisitos": {
+      "type": "string",
+      "description": "Requisitos especiais (certifica\u00e7\u00f5es, materiais)"
+    },
+    "profissional_id": {
+      "type": "string",
+      "description": "ID do profissional atribu\u00eddo"
+    },
+    "profissional_nome": {
+      "type": "string"
+    },
+    "data_aceite": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "data_inicio_execucao": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "data_finalizacao": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": [
+    "convenio_nome",
+    "especialidade",
+    "valor",
+    "endereco",
+    "data_atendimento"
+  ]
+}
