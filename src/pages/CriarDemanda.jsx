@@ -38,7 +38,7 @@ export default function CriarDemanda() {
 
   return (
     <div className="pb-32">
-      <TopNav />
+      <TopNav currentPage="CriarDemanda" />
       <PageHeader title="Criar Demanda" />
       
       <div className="p-4 md:px-12 lg:px-24 max-w-2xl mx-auto">

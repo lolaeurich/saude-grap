@@ -8,6 +8,8 @@ import PageNotFound from './lib/PageNotFound';
 import { AuthProvider, useAuth } from '@/lib/AuthContext';
 import { JornadaProvider, useJornada } from '@/lib/JornadaContext';
 import UserNotRegisteredError from '@/components/UserNotRegisteredError';
+import CriarDemanda from '@/pages/CriarDemanda';
+import CriarDemandaRecorrente from '@/pages/CriarDemandaRecorrente';
 
 const { Pages, pagesProfissional, pagesConvenio } = pagesConfig;
 
@@ -69,6 +71,16 @@ const AuthenticatedApp = () => {
           }
         />
       ))}
+      <Route path="/CriarDemanda" element={
+        <LayoutWrapper currentPageName="CriarDemanda">
+          <CriarDemanda />
+        </LayoutWrapper>
+      } />
+      <Route path="/CriarDemandaRecorrente" element={
+        <LayoutWrapper currentPageName="CriarDemandaRecorrente">
+          <CriarDemandaRecorrente />
+        </LayoutWrapper>
+      } />
       <Route path="*" element={<PageNotFound />} />
     </Routes>
   );
