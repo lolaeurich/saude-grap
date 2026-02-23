@@ -230,9 +230,6 @@ export default function MinhasDemandas() {
 
     return list.map((demanda) => (
       <div key={demanda.id} className="relative">
-        <div className="absolute -top-2 right-4 z-10">
-          <StatusBadge status={demanda.status} />
-        </div>
         <DemandaCard
           demanda={demanda}
           variant={variant}
@@ -289,9 +286,6 @@ export default function MinhasDemandas() {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
                 {demandasEmExecucao.slice(1).map((demanda) => (
                   <div key={demanda.id} className="relative">
-                    <div className="absolute -top-2 right-4 z-10">
-                      <StatusBadge status={demanda.status} />
-                    </div>
                     <DemandaCard
                       demanda={demanda}
                       variant="em_execucao"

@@ -43,7 +43,7 @@ export default function DemandaPublicadaCard({ demanda }) {
               <p className="text-xs text-gray-600 truncate">{demanda.convenio_nome}</p>
             </div>
           </div>
-          <div className="flex flex-col gap-1 items-end flex-shrink-0">
+          <div className="flex flex-col gap-2 items-end flex-shrink-0">
             <Badge variant="outline" className={`${urgencia.className} border-2 font-semibold text-[10px] px-2 py-0.5`}>
               {urgencia.label}
             </Badge>

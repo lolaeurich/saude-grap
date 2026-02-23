@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { MapPin, Calendar, DollarSign, Stethoscope } from "lucide-react";
 import { format } from "date-fns";
 import { ptBR } from "date-fns/locale";
+import StatusBadge from './StatusBadge';
 
 const urgenciaConfig = {
   urgente: { label: "Urgente", className: "bg-red-100 text-red-700 border-red-200" },
@@ -60,9 +61,12 @@ export default function DemandaCard({
               <p className="text-xs text-gray-600 truncate">{demanda.convenio_nome}</p>
             </div>
           </div>
-          <Badge variant="outline" className={`${urgencia.className} border-2 font-semibold text-[10px] px-2 py-0.5 flex-shrink-0`}>
-            {urgencia.label}
-          </Badge>
+          <div className="flex flex-col gap-2 items-end flex-shrink-0">
+            <Badge variant="outline" className={`${urgencia.className} border-2 font-semibold text-[10px] px-2 py-0.5`}>
+              {urgencia.label}
+            </Badge>
+            {demanda.status && <StatusBadge status={demanda.status} />}
+          </div>
         </div>
 
         {/* Info */}

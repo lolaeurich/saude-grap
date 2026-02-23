@@ -130,6 +130,24 @@ export default function DemandasDisponiveis() {
   const [demandas, setDemandas] = useState(mockDemandas);
   const [selectedDemanda, setSelectedDemanda] = useState(null);
 
+  const getNivelValor = (valor) => {
+    if (valor <= 100) return 1;
+    if (valor <= 150) return 2;
+    if (valor <= 200) return 3;
+    return 4;
+  };
+
+  const getTooltipValor = (valor) => {
+    const nivel = getNivelValor(valor);
+    switch(nivel) {
+      case 1: return "R$ 50 - R$ 100";
+      case 2: return "R$ 101 - R$ 150";
+      case 3: return "R$ 151 - R$ 200";
+      case 4: return "Acima de R$ 200";
+      default: return "";
+    }
+  };
+
   const handleAceitar = (id) => {
     setDemandas(demandas.filter(d => d.id !== id));
   };
@@ -191,9 +209,13 @@ export default function DemandasDisponiveis() {
                   <Clock size={16} />
                   <span>{demanda.hora}</span>
                 </div>
-                <div className="flex items-center gap-2 text-green-700 font-semibold">
-                  <DollarSign size={16} />
-                  <span>R$ {demanda.valor}</span>
+                <div 
+                  className="flex items-center gap-0.5 text-green-600 cursor-default" 
+                  title={`Estimativa: ${getTooltipValor(demanda.valor)}`}
+                >
+                  {[...Array(getNivelValor(demanda.valor))].map((_, i) => (
+                    <DollarSign key={i} size={14} strokeWidth={2.5} />
+                  ))}
                 </div>
               </div>
 
